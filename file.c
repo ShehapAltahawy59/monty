@@ -28,9 +28,8 @@ int read_file(FILE *fn)
 
 int parse_line(char *buffer,int line_number,int format)
 {
-    	char *opcode;
-        char seprator="\n";
-        unsigned int value_number;
+    	char *opcode, *value_number;
+        char *seprator="\n";
         
         opcode = strtok(buffer, seprator);
 
@@ -41,7 +40,7 @@ int parse_line(char *buffer,int line_number,int format)
 
 }
 
-void find_opcode(char *opcode,unsigned int value_number,int line__number,int format)
+void find_opcode(char *opcode,char *value_number,int line__number,int format)
 {
     instruction_t func_list[] = {
 		{"push", add_to_stack},
@@ -53,7 +52,7 @@ void find_opcode(char *opcode,unsigned int value_number,int line__number,int for
     {
         if (strcmp(func_list[i].opcode,opcode) == 0)
         {
-            func_list[i].f(&head,value_number);
+            func_list[i].f(&head,atoi(value_number));
         }
     }
 
