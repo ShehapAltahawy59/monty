@@ -28,7 +28,7 @@ void parse_line(char *buffer,int line_number,int format)
 {
     	char *opcode;
         char seprator="\n";
-        int value_number;
+        unsigned int value_number;
         
         opcode = strtok(buffer, seprator);
 
@@ -38,7 +38,7 @@ void parse_line(char *buffer,int line_number,int format)
 
 }
 
-void find_opcode(char *opcode,int value_number,int line__number,int format)
+void find_opcode(char *opcode,unsigned int value_number,int line__number,int format)
 {
     instruction_t func_list[] = {
 		{"push", add_to_stack},

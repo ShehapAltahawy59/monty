@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *create_node(int value)
+stack_t *create_node(unsigned int value)
 {
     stack_t *new_node;
 

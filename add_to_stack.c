@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void add_to_stack(stack_t **head,int value)
+void add_to_stack(stack_t **head, unsigned int value)
 {
     stack_t *new_node;
 
