@@ -6,7 +6,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-
+stack_t *head = NULL;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -35,5 +35,11 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void add_to_stack(stack_t **head,int value);
+stack_t *create_node(int value);
+void print_stack(stack_t **head, int none);
+
+
  #endif
 
