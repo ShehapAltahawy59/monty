@@ -13,7 +13,7 @@ int read_file(FILE *fn)
 {
     int line_number,format;
     char *buffer = NULL;
-    size_t *len = 0;
+    size_t len = 0;
     
     line_number=1;
     format=0;
