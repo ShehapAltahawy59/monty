@@ -3,7 +3,7 @@
 
 void open_file(char *filename)
 {
-    FILE *fn = fopen(filename,'r'); 
+    FILE *fn = fopen(filename,"r"); 
 
     read_file(fn); 
 
