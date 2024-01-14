@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void print_stack(stack_t **head, int none)
+void print_stack(stack_t **head, unsigned int none)
 {
     stack_t *pointer;
     (void)none;
