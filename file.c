@@ -43,15 +43,13 @@ int parse_line(char *buffer,int line_number,int format)
 
 void find_opcode(char *opcode,char *value_number,int line__number,int format)
 {
-    (void)line__number;
-    (void)format;
-    
-
     instruction_t func_list[]= {
 		{"push", add_to_stack},
 		{"pall", print_stack},
 		{NULL, NULL}
 	};
+    (void)line__number;
+    (void)format;
     int i = 0;
     while( func_list[i].opcode  )
     {
