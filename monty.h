@@ -36,9 +36,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 stack_t *head = NULL;
-void add_to_stack(stack_t **head,int value);
+void add_to_stack(stack_t **head,unsigned int value);
 stack_t *create_node(int value);
-void print_stack(stack_t **head, int none);
+void print_stack(stack_t **head, unsigned int none);
 
 
  #endif
