@@ -18,7 +18,7 @@ int read_file(FILE *fn)
     line_number=1;
     format=0;
 
-    for(line_number; getline(&buffer, &len, fn) != -1; line_number++)
+    for(line_number = 1; getline(&buffer, &len, fn) != -1; line_number++)
     {
         format = parse_line(buffer,line_number,format);
 
