@@ -20,11 +20,13 @@ int read_file(FILE *fn)
 
     for(line_number; getline(&buffer, &len, fn) != -1; line_number++)
     {
-        parse_line(buffer,line_number,format);
+        format = parse_line(buffer,line_number,format);
+
     }
+    free(buffer);
 }
 
-void parse_line(char *buffer,int line_number,int format)
+int parse_line(char *buffer,int line_number,int format)
 {
     	char *opcode;
         char seprator="\n";
@@ -35,6 +37,7 @@ void parse_line(char *buffer,int line_number,int format)
         value_number = strtok(NULL, seprator);
 
         find_opcode(opcode,value_number,line_number,format);
+        return (format);
 
 }
 

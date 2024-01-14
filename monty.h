@@ -38,7 +38,7 @@ typedef struct instruction_s
 
 void open_file(char *filename);
 int read_file(FILE *fn);
-void parse_line(char *buffer,int line_number,int format);
+int parse_line(char *buffer,int line_number,int format);
 void find_opcode(char *opcode,unsigned int value_number,int line__number,int format);
 stack_t *head = NULL;
 void add_to_stack(stack_t **head,unsigned int value);
