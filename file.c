@@ -48,9 +48,10 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format)
 		{"pall", print_stack},
 		{NULL, NULL}
 	};
+    int i = 0;
     (void)line__number;
     (void)format;
-    int i = 0;
+    
     while( func_list[i].opcode  )
     {
         if (strcmp(func_list[i].opcode,opcode) == 0)
