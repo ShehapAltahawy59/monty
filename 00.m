@@ -1,4 +1,5 @@
-push 0
 push 1
 push 2
-pall
+nop 0
+add 0
+pall 0
