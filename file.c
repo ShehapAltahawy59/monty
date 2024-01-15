@@ -59,8 +59,11 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format, st
         {
             printf("find_opcode\n");
             func_list[i].f(head,atoi(value_number));
+            return;
         }
+        i++;
     }
+    return;
 
 }
 
