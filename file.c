@@ -5,7 +5,7 @@ void open_file(char *filename,stack_t **head )
 {
     FILE *fn = fopen(filename,"r"); 
 
-    read_file(fn,&head); 
+    read_file(fn,head); 
 
 }
 
@@ -20,7 +20,7 @@ int read_file(FILE *fn, stack_t **head)
 
     for(line_number = 1; getline(&buffer, &len, fn) != -1; line_number++)
     {
-        format = parse_line(buffer,line_number,format,&head);
+        format = parse_line(buffer,line_number,format,head);
 
     }
     free(buffer);
@@ -36,7 +36,7 @@ int parse_line(char *buffer,int line_number,int format, stack_t **head)
 
         value_number = strtok(NULL, seprator);
 
-        find_opcode(opcode,value_number,line_number,format, &heaad);
+        find_opcode(opcode,value_number,line_number,format, head);
         return (format);
 
 }
@@ -56,7 +56,7 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format, st
     {
         if (strcmp(func_list[i].opcode,opcode) == 0)
         {
-            func_list[i].f(&head,atoi(value_number));
+            func_list[i].f(head,atoi(value_number));
         }
     }
 
