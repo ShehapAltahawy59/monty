@@ -3,9 +3,9 @@
 void add_to_stack(stack_t **head, unsigned int value)
 {
     stack_t *new_node;
-
+    printf("herer");
     new_node = create_node(value);
-
+    printf("fff")
     if(head == NULL)
     {
         head = &new_node;
