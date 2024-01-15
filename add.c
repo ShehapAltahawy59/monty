@@ -15,8 +15,6 @@ void add(stack_t **head,unsigned int line__number)
     {
         
         pointer = (*head)->prev;
-        printf("%d\n",pointer->n);
-        printf("%d\n",(*head)->n);
         tmp = (pointer->n) + (*head)->n ;
         pointer->n = tmp;
         free(*head);
