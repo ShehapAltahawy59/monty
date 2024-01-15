@@ -46,6 +46,8 @@ void add_to_stack(stack_t **head,unsigned int value);
 stack_t *create_node(unsigned int value);
 void print_stack(stack_t **head, unsigned int none);
 void pop(stack_t **head,unsigned int line__number);
+void add(stack_t **head,unsigned int line__number);
+void nop(stack_t **head,unsigned int line__number);
 
 
  #endif
