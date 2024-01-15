@@ -6,15 +6,15 @@ void add_to_stack(stack_t **head, unsigned int value)
     printf("herer");
     new_node = create_node(value);
     printf("fff");
-    if(head == NULL)
+    if(*head == NULL)
     {
-        head = &new_node;
+        *head = new_node;
         return;
     }
 
     new_node->prev = *head;
     new_node->next = NULL;
     (*head)->next = new_node;
-    head = &new_node;
+    *head = new_node;
 
 }
