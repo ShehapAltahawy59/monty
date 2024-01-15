@@ -29,7 +29,7 @@ int read_file(FILE *fn, stack_t **head)
     return (format);
 }
 
-int parse_line(char *buffer,int line_number,int format, stack_t **head)
+int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
 {
     	char *opcode, *value_number;
         char *seprator=" \n\t";
@@ -45,7 +45,7 @@ int parse_line(char *buffer,int line_number,int format, stack_t **head)
 
 }
 
-void find_opcode(char *opcode,char *value_number,int line__number,int format, stack_t **head)
+void find_opcode(char *opcode,char *value_number,unsigned int line__number,int format, stack_t **head)
 {
     instruction_t func_list[]= {
 		{"push", add_to_stack},
