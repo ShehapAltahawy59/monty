@@ -1,15 +1,15 @@
 #include "monty.h"
 
 
-void open_file(char *filename)
+void open_file(char *filename,stack_t *head )
 {
     FILE *fn = fopen(filename,"r"); 
 
-    read_file(fn); 
+    read_file(fn,&head); 
 
 }
 
-int read_file(FILE *fn)
+int read_file(FILE *fn, stack_t *head)
 {
     int line_number,format;
     char *buffer = NULL;
@@ -20,14 +20,14 @@ int read_file(FILE *fn)
 
     for(line_number = 1; getline(&buffer, &len, fn) != -1; line_number++)
     {
-        format = parse_line(buffer,line_number,format);
+        format = parse_line(buffer,line_number,format,&head);
 
     }
     free(buffer);
     return (format);
 }
 
-int parse_line(char *buffer,int line_number,int format)
+int parse_line(char *buffer,int line_number,int format, stack_t *head)
 {
     	char *opcode, *value_number;
         char *seprator="\n";
@@ -36,12 +36,12 @@ int parse_line(char *buffer,int line_number,int format)
 
         value_number = strtok(NULL, seprator);
 
-        find_opcode(opcode,value_number,line_number,format);
+        find_opcode(opcode,value_number,line_number,format, &heaad);
         return (format);
 
 }
 
-void find_opcode(char *opcode,char *value_number,int line__number,int format)
+void find_opcode(char *opcode,char *value_number,int line__number,int format, stack_t *head)
 {
     instruction_t func_list[]= {
 		{"push", add_to_stack},
