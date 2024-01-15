@@ -3,7 +3,6 @@
 void add(stack_t **head,unsigned int line__number)
 {
     stack_t *pointer;
-    line__number;
     int tmp;
     pointer = *head;
     

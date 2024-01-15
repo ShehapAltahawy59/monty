@@ -47,6 +47,7 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format, st
 		{"push", add_to_stack},
 		{"pall", print_stack},
         {"pop", pop},
+        {"swap",swap},
         {"add",add},
         {"nop",nop},
 		{NULL, NULL}
