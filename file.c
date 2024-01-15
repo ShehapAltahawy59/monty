@@ -59,7 +59,7 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format, st
     {
         if (strcmp(func_list[i].opcode,opcode) == 0)
         {
-            printf("%s\n"وfunc_list[i].opcode);
+            printf("%s\n",func_list[i].opcode);
             func_list[i].f(head,atoi(value_number));
             return;
         }
