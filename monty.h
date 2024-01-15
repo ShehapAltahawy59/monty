@@ -53,6 +53,7 @@ void err(int error_code, ...);
 void more_err(int error_code, ...);
 void string_err(int error_code, ...);
 void free_nodes(stack_t **head);
+char *trim_whitespace(char *str);
 
 
  #endif

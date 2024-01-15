@@ -29,6 +29,20 @@ int read_file(FILE *fn, stack_t **head)
     return (format);
 }
 
+char *trim_whitespace(char *str)
+{
+    char *end;
+
+    // Trim trailing space
+    end = str + strlen(str) - 1;
+    while(end > str && isspace((unsigned char)*end)) end--;
+
+    // Write new null terminator
+    *(end+1) = 0;
+
+    return str;
+}
+
 int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
 {
     	char *opcode, *value_number;
@@ -37,6 +51,7 @@ int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
         if (buffer == NULL)
 		    err(4);
         opcode = strtok(buffer, seprator);
+        opcode = trim_whitespace(opcode);
 
         value_number = strtok(NULL, seprator);
         
