@@ -49,7 +49,7 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format, st
 		{NULL, NULL}
 	};
     int i = 0;
-    unsigned int x;
+    (void)value_number;
     (void)format;
     
     
