@@ -31,7 +31,7 @@ int read_file(FILE *fn, stack_t **head)
 int parse_line(char *buffer,int line_number,int format, stack_t **head)
 {
     	char *opcode, *value_number;
-        char *seprator="\n";
+        char *seprator=" \n\t";
         
         opcode = strtok(buffer, seprator);
 
