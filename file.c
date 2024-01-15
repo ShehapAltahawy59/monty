@@ -3,7 +3,9 @@
 
 void open_file(char *filename,stack_t **head )
 {
-    FILE *fn = fopen(filename,"r"); 
+    FILE *fn = fopen(filename,"r");
+    if (filename == NULL || fn == NULL)
+		err(2, filename);
     read_file(fn,head); 
 
 }
@@ -32,6 +34,8 @@ int parse_line(char *buffer,int line_number,int format, stack_t **head)
     	char *opcode, *value_number;
         char *seprator=" \n\t";
         
+        if (buffer == NULL)
+		    err(4);
         opcode = strtok(buffer, seprator);
 
         value_number = strtok(NULL, seprator);
