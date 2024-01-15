@@ -50,6 +50,7 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format, st
 		{NULL, NULL}
 	};
     int i = 0;
+    unsigned int x;
     (void)line__number;
     (void)format;
     
@@ -59,8 +60,10 @@ void find_opcode(char *opcode,char *value_number,int line__number,int format, st
     {
         if (strcmp(func_list[i].opcode,opcode) == 0)
         {
-            printf("%s\n",func_list[i].opcode);
-            func_list[i].f(head,atoi(value_number));
+            
+            x = atoi(value_number)
+            printf("the number %d\n",x);
+            func_list[i].f(head,x);
             return;
         }
         i++;
