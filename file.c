@@ -6,25 +6,30 @@ void open_file(char *filename,stack_t **head )
     FILE *fn = fopen(filename,"r");
     if (filename == NULL || fn == NULL)
 		err(2, filename);
-    read_file(fn,head); 
+    read_file(fn,head);
 
 }
 
 int read_file(FILE *fn, stack_t **head)
 {
-    int line_number,format;
-    char *buffer = NULL;
-    size_t len = 0;
-    
-    line_number=1;
-    format=0;
+    int line_number, format;
+    char *buffer;
+    size_t len = 1024;
 
-    for(line_number = 1; getline(&buffer, &len, fn) != -1; line_number++)
-    {
-        
-        format = parse_line(buffer,line_number,format,head);
-
+    buffer = (char *)malloc(len + 1);
+    if (!buffer) {
+        printf("Error: Can't open file <file>");
+        exit(EXIT_FAILURE);
     }
+
+    line_number = 1;
+    format = 0;
+
+    while (fgets(buffer, len, fn)) {
+        format = parse_line(buffer, line_number, format, head);
+        line_number++;
+    }
+
     free(buffer);
     return (format);
 }
@@ -33,11 +38,11 @@ char *trim_whitespace(char *str)
 {
     char *end;
 
-    // Trim trailing space
+    
     end = str + strlen(str) - 1;
     while(end > str && isspace((unsigned char)*end)) end--;
 
-    // Write new null terminator
+    
     *(end+1) = 0;
 
     return str;
