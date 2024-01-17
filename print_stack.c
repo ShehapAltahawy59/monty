@@ -18,7 +18,7 @@ void print_stack(stack_t **head, unsigned int none)
 	}
 	while(pointer)
 	{
-		printf("%d\n", pointer->n);
+		fprintf(stdout,"%d\n", pointer->n);
 		pointer = pointer->prev;
 	}
 }

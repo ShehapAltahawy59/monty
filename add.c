@@ -15,7 +15,7 @@ void add(stack_t **head, unsigned int line__number)
 	
 	if (pointer->prev == NULL)
 	{
-		printf("L%d: cant add, stack too short\n", line__number);
+		fprintf(stderr,"L%d: cant add, stack too short\n", line__number);
 		free_nodes(head);
 		exit(EXIT_FAILURE);
 	}

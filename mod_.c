@@ -14,13 +14,13 @@ void mod_(stack_t **head,unsigned int line__number)
 	if(pointer->prev == NULL)
 	{
 		free_nodes(head);
-		printf("L%d: cant div, stack too short\n",line__number);
+		fprintf(stderr,"L%d: cant div, stack too short\n",line__number);
 		exit(EXIT_FAILURE);
 		
 	}
 	if ((*head)->n == 0)
 	{
-	 printf("L%d: division by zero\n",line__number);
+	 fprintf(stderr,"L%d: division by zero\n",line__number);
 	 free_nodes(head);
 	 exit(EXIT_FAILURE);
 	}

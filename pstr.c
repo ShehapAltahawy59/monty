@@ -17,7 +17,7 @@ void pstr(stack_t **head, unsigned int none)
 	index=0;
 	if (pointer == NULL)
 	{
-		printf("\n");
+		fprintf(stdout,"\n");
 		return;
 	}
 	while(pointer)
@@ -25,8 +25,8 @@ void pstr(stack_t **head, unsigned int none)
 		num = pointer->n;
 		if (num == 0 || (num < 65 && num > 90) || (num < 97 && num > 122))
 		{
-			printf("%s",str);
-			printf("\n");
+			fprintf(stdout,"%s",str);
+			fprintf(stdout,"\n");
 			free(str);
 			return;
 		}

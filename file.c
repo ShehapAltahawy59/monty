@@ -135,7 +135,10 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 		{"rotr",rotr},
 		{NULL, NULL}
 	};
-	int i = 0;
+	int flag,i;
+
+	i = 0;
+	flag = 0;
 	(void)format;
 	
 	
@@ -149,8 +152,29 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 		{
 			if(strcmp(func_list[i].opcode,"push") == 0)
 			{
+				if (value_number != NULL && value_number[0] == '-')
+				{
+					value_number = value_number + 1;
+					flag = -1;
+				}
+				if (value_number == NULL)
+				{
+					fprintf(stderr, "L%d: usage: push integer\n",line__number);
+					free_nodes(head);
+					exit(EXIT_FAILURE);
+				}
+					
+				for (i = 0; value_number[i] != '\0'; i++)
+				{
+					if (isdigit(value_number[i]) == 0)
+					{
+						fprintf(stderr, "L%d: usage: push integer\n",line__number);
+						free_nodes(head);
+						exit(EXIT_FAILURE);
+					}
+				}
 				func_list[i].f(head,line__number);
-				(*head)->n = atoi(value_number);
+				(*head)->n = (atoi(value_number) * flag);
 			}
 			else
 			{

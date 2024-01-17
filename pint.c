@@ -13,13 +13,13 @@ void pint(stack_t **head,unsigned int line__number)
 	
 	if(pointer == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n",line__number);
+		fprintf(stderr,"L%d: can't pint, stack empty\n",line__number);
 		free_nodes(head);
 		exit(EXIT_FAILURE);
 	}
 	else
 	{
 		
-		printf("%d\n", pointer->n);
+		fprintf(stdout,"%d\n", pointer->n);
 	}
 }
