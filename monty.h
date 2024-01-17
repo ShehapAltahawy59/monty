@@ -42,7 +42,7 @@ int read_file(FILE *fn, stack_t **head);
 int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head);
 void find_opcode(char *opcode,char *value_number,unsigned int line__number,int format, stack_t **head);
 void add_to_stack(stack_t **head,unsigned int line__number);
-stack_t *create_node();
+stack_t *create_node(stack_t **head);
 void print_stack(stack_t **head, unsigned int none);
 void pop(stack_t **head,unsigned int line__number);
 void swap(stack_t **head,unsigned int line__number);

@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 	}
 	printf("main\n");
 	open_file(argv[1],&head);
+	free_nodes(&head);
 	return (0);
 }
 

@@ -3,7 +3,7 @@
 void add(stack_t **head,unsigned int line__number)
 {
     stack_t *pointer;
-    int tmp;
+    int sum;
     pointer = *head;
     
     if(pointer->prev == NULL)
@@ -15,8 +15,8 @@ void add(stack_t **head,unsigned int line__number)
     {
         
         pointer = (*head)->prev;
-        tmp = (pointer->n) + (*head)->n ;
-        pointer->n = tmp;
+        sum = (pointer->n) + (*head)->n ;
+        pointer->n = sum;
         free(*head);
         *head = pointer;
     }

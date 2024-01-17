@@ -3,9 +3,13 @@
 
 void open_file(char *filename,stack_t **head )
 {
+    
     FILE *fn = fopen(filename,"r");
     if (filename == NULL || fn == NULL)
-		err(2, filename);
+    {
+        fprintf(stderr, "Error: Can't open file %s\n",filename);
+        exit(EXIT_FAILURE);
+    }	
     read_file(fn,head);
 
 }
@@ -18,7 +22,7 @@ int read_file(FILE *fn, stack_t **head)
 
     buffer = (char *)malloc(len + 1);
     if (!buffer) {
-        printf("Error: Can't open file <file>");
+        fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
 
@@ -39,26 +43,41 @@ char *trim_whitespace(char *str)
     char *end;
 
     
+    if (*str == '\0')
+        return str;
+
     end = str + strlen(str) - 1;
     while(end > str && isspace((unsigned char)*end)) end--;
 
-    
     *(end+1) = 0;
 
     return str;
 }
 
+
+
 int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
 {
     	char *opcode, *value_number;
-        char *seprator=" \n\t";
+        char *seprator= " \n\t\r";
         
-        if (buffer == NULL)
-		    err(4);
-        opcode = strtok(buffer, seprator);
-        opcode = trim_whitespace(opcode);
+        value_number = "0";
+        while(isspace((unsigned char)*buffer)) buffer++;
 
-        value_number = strtok(NULL, seprator);
+    /* Ignore blank lines */
+        if (*buffer == '\0')
+        {
+            opcode = NULL;
+        }
+
+    /* Split the line into opcode and argument */
+        else
+        {
+            opcode = strtok(buffer, seprator);
+    
+            value_number = strtok(NULL, seprator);
+        }
+        
         
         find_opcode(opcode,value_number,line_number,format, head);
         return (format);
@@ -77,23 +96,32 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 		{NULL, NULL}
 	};
     int i = 0;
-    (void)value_number;
     (void)format;
     
     
     while( func_list[i].opcode  )
     {
+        if(opcode == NULL)
+        {
+            return;
+        }
         if (strcmp(func_list[i].opcode,opcode) == 0)
         {
-            
-            
-            
-            func_list[i].f(head,line__number);
+            if(strcmp(func_list[i].opcode,"push") == 0)
+            {
+                func_list[i].f(head,line__number);
+                (*head)->n = atoi(value_number);
+            }
+            else
+            {
+                func_list[i].f(head,line__number);
+            }
             return;
         }
         i++;
     }
-    return;
+    fprintf(stderr, "L%d: unknown instruction %s\n", line__number, opcode);
+    
 
 }
 

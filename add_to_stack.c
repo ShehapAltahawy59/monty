@@ -1,10 +1,11 @@
 #include "monty.h"
 
-void add_to_stack(stack_t **head, unsigned int value)
+void add_to_stack(stack_t **head, unsigned int line__number)
 {
     stack_t *new_node;
-    
-    new_node = create_node(value);
+    (void)line__number;
+
+    new_node = create_node(head);
     
     if(*head == NULL)
     {
