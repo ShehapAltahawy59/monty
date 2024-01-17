@@ -60,6 +60,8 @@ void mul_(stack_t **head,unsigned int line__number);
 void mod_(stack_t **head,unsigned int line__number);
 void pchar(stack_t **head,unsigned int line__number);
 void pstr(stack_t **head, unsigned int none);
+void rotl(stack_t **head, unsigned int none);
+void rotr(stack_t **head, unsigned int none);
 
  #endif
 
