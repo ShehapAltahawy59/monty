@@ -16,6 +16,7 @@ void open_file(char *filename,stack_t **head )
 		exit(EXIT_FAILURE);
 	}	
 	read_file(fn,head);
+	fclose(fn);
 
 }
 
