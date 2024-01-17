@@ -44,6 +44,7 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 void add_to_stack(stack_t **head,unsigned int line__number);
 stack_t *create_node(stack_t **head);
 void print_stack(stack_t **head, unsigned int none);
+void pint(stack_t **head,unsigned int line__number);
 void pop(stack_t **head,unsigned int line__number);
 void swap(stack_t **head,unsigned int line__number);
 void add(stack_t **head,unsigned int line__number);
@@ -53,7 +54,11 @@ void more_err(int error_code, ...);
 void string_err(int error_code, ...);
 void free_nodes(stack_t **head);
 char *trim_whitespace(char *str);
-
+void sub(stack_t **head,unsigned int line__number);
+void div_(stack_t **head,unsigned int line__number);
+void mul_(stack_t **head,unsigned int line__number);
+void mod_(stack_t **head,unsigned int line__number);
+void pchar(stack_t **head,unsigned int line__number);
 
  #endif
 

@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void add(stack_t **head,unsigned int line__number)
+void mul_(stack_t **head,unsigned int line__number)
 {
     stack_t *pointer;
     int sum;
@@ -8,7 +8,7 @@ void add(stack_t **head,unsigned int line__number)
     
     if(pointer->prev == NULL)
     {
-        printf("L%d: cant add, stack too short\n",line__number);
+        printf("L%d: cant sub, stack too short\n",line__number);
         free_nodes(head);
         exit(EXIT_FAILURE);
     }
@@ -16,7 +16,7 @@ void add(stack_t **head,unsigned int line__number)
     {
         
         pointer = (*head)->prev;
-        sum = (pointer->n) + (*head)->n ;
+        sum = (*head)->n * (pointer->n) ;
         pointer->n = sum;
         free(*head);
         *head = pointer;

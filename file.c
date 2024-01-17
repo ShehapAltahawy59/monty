@@ -65,7 +65,7 @@ int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
         while(isspace((unsigned char)*buffer)) buffer++;
 
     /* Ignore blank lines */
-        if (*buffer == '\0')
+        if (*buffer == '\0' || buffer[0]== '#')
         {
             opcode = NULL;
         }
@@ -89,10 +89,16 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
     instruction_t func_list[]= {
 		{"push", add_to_stack},
 		{"pall", print_stack},
+        {"pint",pint},
         {"pop", pop},
         {"swap",swap},
         {"add",add},
         {"nop",nop},
+        {"sub",sub},
+        {"div",div_},
+        {"mul",mul_},
+        {"mod",mod_},
+        {"pchar",pchar},
 		{NULL, NULL}
 	};
     int i = 0;
