@@ -22,6 +22,7 @@ void pstr(stack_t **head, unsigned int none)
         {
             printf("%s",str);
             printf("\n");
+            free(str);
             return;
         }
         str[index] = (char)num;
