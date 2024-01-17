@@ -6,15 +6,16 @@
  * Return:void
 */
 
-void add(stack_t **head,unsigned int line__number)
+void add(stack_t **head, unsigned int line__number)
 {
 	stack_t *pointer;
 	int sum;
+
 	pointer = *head;
 	
-	if(pointer->prev == NULL)
+	if (pointer->prev == NULL)
 	{
-		printf("L%d: cant add, stack too short\n",line__number);
+		printf("L%d: cant add, stack too short\n", line__number);
 		free_nodes(head);
 		exit(EXIT_FAILURE);
 	}
@@ -22,7 +23,7 @@ void add(stack_t **head,unsigned int line__number)
 	{
 		
 		pointer = (*head)->prev;
-		sum = (pointer->n) + (*head)->n ;
+		sum = (pointer->n) + (*head)->n;
 		pointer->n = sum;
 		free(*head);
 		*head = pointer;
