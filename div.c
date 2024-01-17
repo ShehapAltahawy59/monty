@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * div - divide the top 2 element
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 void div_(stack_t **head,unsigned int line__number)
 {
     stack_t *pointer;

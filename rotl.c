@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * rotl - rotl to stack
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 void rotl(stack_t **head, unsigned int none)
 {
     stack_t *last,*first,*new_node;

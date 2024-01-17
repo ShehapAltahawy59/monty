@@ -1,4 +1,10 @@
 #include "monty.h"
+/**
+ * add - add top two element in stack
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 
 void add(stack_t **head,unsigned int line__number)
 {

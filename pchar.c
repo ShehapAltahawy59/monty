@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * pchar - print the top as char 
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 void pchar(stack_t **head,unsigned int line__number)
 {
     stack_t *pointer;

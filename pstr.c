@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * pstr - convert elemnt to string
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 void pstr(stack_t **head, unsigned int none)
 {
     stack_t *pointer;

@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * create_node - crate a new node
+ * @head: pointer of pointer to head of stack
+ * Return:pointer to node
+*/
 stack_t *create_node(stack_t **head)
 {
     stack_t *new_node;

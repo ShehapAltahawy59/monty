@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * pop - return the head of stack
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 void pop(stack_t **head,unsigned int line__number)
 {
     stack_t *pointer;

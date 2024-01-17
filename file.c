@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * open_file - mod the top two element in stack
+ * @filename: pointer to file
+ * @head: pointer of pointer to head
+ * Return:void
+*/
 
 void open_file(char *filename,stack_t **head )
 {
@@ -14,6 +19,12 @@ void open_file(char *filename,stack_t **head )
 
 }
 
+/**
+ * read_file - mod the top two element in stack
+ * @fn: pointer to file
+ * @head: pointer of pointer to head
+ * Return:void
+*/
 int read_file(FILE *fn, stack_t **head)
 {
     int line_number, format;
@@ -37,7 +48,11 @@ int read_file(FILE *fn, stack_t **head)
     free(buffer);
     return (format);
 }
-
+/**
+ * trim_whitespace - remove whitespaces
+ * @str: array if char
+ * Return:format
+*/
 char *trim_whitespace(char *str)
 {
     char *end;
@@ -54,7 +69,14 @@ char *trim_whitespace(char *str)
     return str;
 }
 
-
+/**
+ * parse_line - split the linr 
+ * @buffer: array if char
+ * @line_number: the number of line
+ * @format:the mode atack or queue
+ * @head: pointer of pointer to head
+ * Return:format
+*/
 
 int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
 {
@@ -64,13 +86,13 @@ int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
         value_number = "0";
         while(isspace((unsigned char)*buffer)) buffer++;
 
-    /* Ignore blank lines */
+   
         if (*buffer == '\0' || buffer[0]== '#')
         {
             opcode = NULL;
         }
 
-    /* Split the line into opcode and argument */
+    
         else
         {
             opcode = strtok(buffer, seprator);
@@ -83,7 +105,15 @@ int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
         return (format);
 
 }
-
+/**
+ * find_opcode - perform the opcode
+ * @opcode: the code
+ * @value_number: the value to add in stack
+ * @line_number: the number of line
+ * @format:the mode atack or queue
+ * @head: pointer of pointer to head
+ * Return:void
+*/
 void find_opcode(char *opcode,char *value_number,unsigned int line__number,int format, stack_t **head)
 {
     instruction_t func_list[]= {

@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * free_nodes - print the head of stack
+ * @head: pointer of pointer to head of stack
+ * Return:void
+*/
 void free_nodes(stack_t **head)
 {
 	stack_t *tmp;

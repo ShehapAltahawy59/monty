@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * add_to_stack - add element to stack
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 void add_to_stack(stack_t **head, unsigned int line__number)
 {
     stack_t *new_node;

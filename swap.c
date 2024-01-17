@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * swap - swap the top two element in stack
+ * @head: pointer of pointer to head of stack
+ * @line_number: the line which is excuted
+ * Return:void
+*/
 void swap(stack_t **head,unsigned int line__number)
 {
     stack_t *pointer;
