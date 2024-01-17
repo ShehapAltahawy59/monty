@@ -13,7 +13,7 @@ void add(stack_t **head, unsigned int line__number)
 
 	pointer = *head;
 	
-	if (pointer->prev == NULL)
+	if (pointer == NULL || pointer->prev == NULL)
 	{
 		fprintf(stderr,"L%d: cant add, stack too short\n", line__number);
 		free_nodes(head);

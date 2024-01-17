@@ -11,7 +11,7 @@ void div_(stack_t **head,unsigned int line__number)
 	int sum;
 	pointer = *head;
 	
-	if(pointer->prev == NULL)
+	if(pointer == NULL || pointer->prev == NULL)
 	{
 		free_nodes(head);
 		fprintf(stderr,"L%d: cant div, stack too short\n",line__number);
