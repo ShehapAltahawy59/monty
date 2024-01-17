@@ -99,6 +99,7 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
         {"mul",mul_},
         {"mod",mod_},
         {"pchar",pchar},
+        {"pstr",pstr},
 		{NULL, NULL}
 	};
     int i = 0;
