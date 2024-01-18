@@ -46,7 +46,7 @@ stack_t *create_node(int n)
  * free_nodes - print the head of stack
  * Return:void
 */
-void free_nodes()
+void free_nodes(void)
 {
 	stack_t *tmp;
 
