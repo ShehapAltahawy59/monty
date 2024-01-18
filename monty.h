@@ -66,5 +66,6 @@ void pstr(stack_t **head, unsigned int none);
 void rotl(stack_t **head, unsigned int none);
 void rotr(stack_t **head, unsigned int none);
 void call_fun(instruction_t func, char *opcode, char *value_number, unsigned int line__number, int format);
+ void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln);
  #endif
 
