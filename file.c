@@ -8,12 +8,12 @@
 
 void open_file(char *filename, stack_t *head)
 {
-	FILE *fn = fopen(filename,"r");
+	FILE *fn = fopen(filename, "r");
 	(void)head;
 	if (filename == NULL || fn == NULL)
 	{
 		err(2, filename);
-	}	
+	}
 	read_file(fn);
 	fclose(fn);
 }
@@ -58,7 +58,7 @@ int parse_line(char *buffer, unsigned int line_number, int format)
 		err(4);
 	}
 	opcode = strtok(buffer, delim);
-	if (opcode == NULL )
+	if (opcode == NULL)
 		return (format);
 	value = strtok(NULL, delim);
 	if (strcmp(opcode, "stack") == 0)
