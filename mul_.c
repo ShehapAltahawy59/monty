@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
  * mul_ - mul the top two element in stack
- * @head: pointer of pointer to head of stack
- * @new_node: the line which is excuted
+ * @new_node: pointer of pointer to head of stack
+ * @line__number: the line which is excuted
  * Return:void
 */
 void mul_(stack_t **new_node, unsigned int line__number)
