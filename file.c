@@ -73,7 +73,7 @@ int parse_line(char *buffer, unsigned int line_number, int format)
  * find_opcode - perform the opcode
  * @opcode: the code
  * @value_number: the value to add in stack
- * @line_number: the number of line
+ * @line__number: the number of line
  * @format:the mode atack or queue
  * Return:void
 */
