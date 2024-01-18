@@ -14,7 +14,7 @@ void div_(stack_t **new_node, unsigned int line__number)
 		more_err(8, line__number, "div");
 	}
 
-	if ((*new_node)->n == 0)
+	if ( (*new_node)->n == 0)
 	{
 	 more_err(9, line__number);
 	}
