@@ -1,18 +1,17 @@
 #include "monty.h"
 /**
- * div - divide the top 2 element
+ * div_ - divide the top 2 element
  * @new_node: pointer of pointer to head of stack
- * @line_number: the line which is excuted
+ * @line__number: the line which is excuted
  * Return:void
 */
-void div_(stack_t **new_node,unsigned int line__number)
+void div_(stack_t **new_node, unsigned int line__number)
 {
 	int result;
 
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
 	{
 		more_err(8, line__number, "div");
-		
 	}
 
 	if ((*new_node)->n == 0)
