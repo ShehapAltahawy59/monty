@@ -5,16 +5,14 @@
  * @line__number: the line which is excuted
  * Return:void
 */
-void pchar(stack_t **new_node,unsigned int line__number)
+void pchar(stack_t **new_node, unsigned int line__number)
 {
-    
 	int ascii;
 
 	if (new_node == NULL || *new_node == NULL)
 	{
 		string_err(11, line__number);
 	}
-
 	ascii = (*new_node)->n;
 	if (ascii < 0 || ascii > 127)
 	{
