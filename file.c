@@ -164,7 +164,7 @@ void call_fun(instruction_t func, char *opcode, char *value_number, unsigned int
 		if (format == 0)
 			func.f(&node, line__number);
 		if (format == 1)
-			add_to_queue(&node, ln);
+			add_to_queue(&node, line__number);
 	}
 	else
 		func.f(&head, line__number);
