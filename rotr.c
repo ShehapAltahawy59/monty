@@ -8,7 +8,6 @@
 void rotr(stack_t **new_node, unsigned int none)
 {
 	stack_t *pointer;
-	
 	(void)none;
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
 		return;
