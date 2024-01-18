@@ -40,7 +40,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void open_file(char *filename,stack_t **head );
-void read_file(FILE *fd,stack_t **head)
+void read_file(FILE *fd,stack_t **head);
 int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head);
 void find_opcode(char *opcode,char *value_number,unsigned int line__number,int format, stack_t **head);
 void add_to_stack(stack_t **head,unsigned int line__number);
