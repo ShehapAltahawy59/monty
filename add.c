@@ -2,7 +2,7 @@
 /**
  * add - add top two element in stack
  * @new_node: pointer of pointer to head of stack
- * @line_number: the line which is excuted
+ * @line__number: the line which is excuted
  * Return:void
 */
 
@@ -21,4 +21,3 @@ void add(stack_t **new_node, unsigned int line__number)
 	free((*new_node)->prev);
 	(*new_node)->prev = NULL;
 }
-	
