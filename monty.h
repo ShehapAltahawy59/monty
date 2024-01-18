@@ -41,7 +41,7 @@ typedef struct instruction_s
 
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
-void open_file(char *filename);
+void open_file(char *filename,stack_t *head);
 void read_file(FILE *fd);
 int parse_line(char *buffer,unsigned int line_number,int format);
 void find_opcode(char *opcode,char *value_number,unsigned int line__number,int format);
