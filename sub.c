@@ -10,7 +10,7 @@ void sub(stack_t **new_node, unsigned int line__number)
 	int sub;
 
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
-    {
+	{
 		more_err(8, line__number, "sub");
 
 	}
