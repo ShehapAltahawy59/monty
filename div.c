@@ -11,17 +11,13 @@ void div_(stack_t **new_node,unsigned int line__number)
 
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
 	{
-		free_nodes();
-		fprintf(stderr,"L%d: cant div, stack too short\n",line__number);
-		exit(EXIT_FAILURE);
+		more_err(8, line_number, "div");
 		
 	}
 
 	if ((*new_node)->n == 0)
 	{
-	 fprintf(stderr,"L%d: division by zero\n",line__number);
-	 free_nodes();
-	 exit(EXIT_FAILURE);
+	 more_err(9, line_number);
 	}
 	(*new_node) = (*new_node)->next;
 	result = (*new_node)->n / (*new_node)->prev->n;

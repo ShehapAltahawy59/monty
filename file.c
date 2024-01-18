@@ -12,8 +12,7 @@ void open_file(char *filename )
 	FILE *fn = fopen(filename,"r");
 	if (filename == NULL || fn == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n",filename);
-		exit(EXIT_FAILURE);
+		err(2, file_name);
 	}	
 	read_file(fn);
 	fclose(fn);
@@ -58,8 +57,7 @@ int parse_line(char *buffer, unsigned int line_number, int format)
 
 	if (buffer == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		err(4);
 	}
 	opcode = strtok(buffer, delim);
 	
@@ -120,9 +118,7 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 	}
 	if (flag == 1)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line__number, opcode);
-		free_nodes();
-		exit(EXIT_FAILURE);
+		err(3, line__number, opcode);
 	}
 		
 
@@ -153,18 +149,14 @@ void call_fun(instruction_t func, char *opcode, char *value_number, unsigned int
 		}
 		if (value_number == NULL)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n",line__number);
-			free_nodes();
-			exit(EXIT_FAILURE);
+			err(5, line__number);
 		}
 		for (i = 0; value_number[i] != '\0'; i++)
 		{
 			if (isdigit(value_number[i]) == 0)
 				{
 						
-					fprintf(stderr, "L%d: usage: push integer\n",line__number);
-					free_nodes();
-					exit(EXIT_FAILURE);
+					err(5, line__number);
 				}
 		}
 		node = create_node(atoi(value_number) * flag);

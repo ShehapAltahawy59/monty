@@ -12,17 +12,13 @@ void pchar(stack_t **new_node,unsigned int line__number)
 
 	if (new_node == NULL || *new_node == NULL)
 	{
-		fprintf(stderr,"L%d: can't pchar, stack empty\n",line__number);
-		free_nodes();
-		exit(EXIT_FAILURE);
+		string_err(11, line_number);
 	}
 
 	ascii = (*new_node)->n;
 	if (ascii < 0 || ascii > 127)
 	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line__number);
-		free_nodes();
-		exit(EXIT_FAILURE);
+		string_err(10, line_number);
 	}
 	printf("%c\n", ascii);
 }

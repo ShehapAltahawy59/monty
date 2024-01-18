@@ -12,9 +12,7 @@ void add(stack_t **new_node, unsigned int line__number)
 
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
 	{
-		fprintf(stderr,"L%d: cant add, stack too short\n", line__number);
-		free_nodes();
-		exit(EXIT_FAILURE);
+		more_err(8, line_number, "add");
 	}
 
 	(*new_node) = (*new_node)->next;

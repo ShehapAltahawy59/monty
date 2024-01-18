@@ -11,9 +11,7 @@ void pop(stack_t **new_node,unsigned int line__number)
 
 	if (new_node == NULL || *new_node == NULL)
 	{
-		fprintf(stderr,"L%d: can't pop an empty stack\n", line__number);
-		free_nodes();
-		exit(EXIT_FAILURE);
+		more_err(7, line_number);
 	}
 	pointer = *new_node;
 	*new_node = pointer->next;

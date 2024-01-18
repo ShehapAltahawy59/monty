@@ -11,9 +11,7 @@ void mul_(stack_t **new_node,unsigned int line__number)
 
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
 	{
-		fprintf(stderr,"L%d: cant mul, stack too short\n",line__number);
-		free_nodes();
-		exit(EXIT_FAILURE);
+		more_err(8, line_number, "mul");
 	}
 
 	(*new_node) = (*new_node)->next;
