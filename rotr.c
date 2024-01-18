@@ -7,7 +7,6 @@
 */
 void rotr(stack_t **new_node, unsigned int none)
 {
-	
 	stack_t *pointer;
 	
 	(void)none;
