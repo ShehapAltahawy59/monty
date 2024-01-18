@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * pchar - print the top as char 
- * @head: pointer of pointer to head of stack
+ * @new_node: pointer of pointer to head of stack
  * @line_number: the line which is excuted
  * Return:void
 */

@@ -22,8 +22,7 @@ void open_file(char *filename ,stack_t *head)
 
 /**
  * read_file - mod the top two element in stack
- * @fn: pointer to file
- * @head: pointer of pointer to head
+ * @fd: pointer to file
  * Return:void
 */
 void read_file(FILE *fd)
@@ -81,7 +80,6 @@ int parse_line(char *buffer, unsigned int line_number, int format)
  * @value_number: the value to add in stack
  * @line_number: the number of line
  * @format:the mode atack or queue
- * @head: pointer of pointer to head
  * Return:void
 */
 void find_opcode(char *opcode,char *value_number,unsigned int line__number,int format)
@@ -128,9 +126,9 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 /**
  * call_fun - Calls the required function.
  * @func: Pointer to the function that is about to be called.
- * @op: string representing the opcode.
- * @val: string representing a numeric value.
- * @ln: line numeber for the instruction.
+ * @opcode: string representing the opcode.
+ * @value_number: string representing a numeric value.
+ * @line__number: line numeber for the instruction.
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */

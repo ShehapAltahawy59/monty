@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 /**
  * create_node - crate a new node
- * @head: pointer of pointer to head of stack
+ * @n: the value
  * Return:pointer to node
 */
 stack_t *create_node( int n)
@@ -46,7 +46,6 @@ stack_t *create_node( int n)
 
 /**
  * free_nodes - print the head of stack
- * @head: pointer of pointer to head of stack
  * Return:void
 */
 void free_nodes()
@@ -65,7 +64,11 @@ void free_nodes()
 }
 
 
-
+/**
+ * add_to_queue - Adds a node to the queue.
+ * @new_node: Pointer to the new node.
+ * @ln: line number of the opcode.
+ */
 void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
