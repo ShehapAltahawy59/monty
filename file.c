@@ -6,10 +6,11 @@
  * Return:void
 */
 
-void open_file(char *filename )
+void open_file(char *filename ,stack_t *head)
 {
 	
 	FILE *fn = fopen(filename,"r");
+	(void)head;
 	if (filename == NULL || fn == NULL)
 	{
 		err(2, filename);

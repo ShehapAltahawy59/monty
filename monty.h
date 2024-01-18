@@ -56,7 +56,7 @@ void nop(stack_t **head,unsigned int line__number);
 void err(int error_code, ...);
 void more_err(int error_code, ...);
 void string_err(int error_code, ...);
-void free_nodes(stack_t **head);
+void free_nodes();
 void sub(stack_t **head,unsigned int line__number);
 void div_(stack_t **head,unsigned int line__number);
 void mul_(stack_t **head,unsigned int line__number);
