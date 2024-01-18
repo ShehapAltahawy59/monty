@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "C:\\Users\\mosta\\Desktop\\monty"
             ],
             "defines": [
                 "_DEBUG",
@@ -12,9 +12,9 @@
             ],
             "windowsSdkVersion": "10.0.22000.0",
             "compilerPath": "cl.exe",
-            "cStandard": "c89",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "windows-msvc-x64",
+            "cStandard": "c89"
         }
     ],
     "version": 4

@@ -26,87 +26,55 @@ void open_file(char *filename,stack_t **head )
  * @head: pointer of pointer to head
  * Return:void
 */
-int read_file(FILE *fn, stack_t **head)
+void read_file(FILE *fd,stack_t **head)
 {
-	int line_number, format;
-	char *buffer;
-	size_t len = 1024;
+	int line_number, format = 0;
+	char *buffer = NULL;
+	size_t len = 0;
 
-	buffer = (char *)malloc(len + 1);
-	if (!buffer) {
+	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
+	{
+		format = parse_line(buffer, line_number, format,head);
+	}
+	free(buffer);
+}
+
+
+/**
+ * parse_line - Separates each line into tokens to determine
+ * which function to call
+ * @buffer: line from the file
+ * @line_number: line number
+ * @format:  storage format. If 0 Nodes will be entered as a stack.
+ * if 1 nodes will be entered as a queue.
+ * Return: Returns 0 if the opcode is stack. 1 if queue.
+ */
+
+int parse_line(char *buffer, int line_number, int format,  stack_t **head)
+{
+	char *opcode, *value;
+	const char *delim = "\n\t\r ";
+
+	if (buffer == NULL)
+	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	opcode = strtok(buffer, delim);
+	
+	if (opcode == NULL )
+		return (format);
+	value = strtok(NULL, delim);
 
-	line_number = 1;
-	format = 0;
+	if (strcmp(opcode, "stack") == 0)
+		return (0);
+	if (strcmp(opcode, "queue") == 0)
+		return (1);
 
-	while (fgets(buffer, len, fn)) {
-		format = parse_line(buffer, line_number, format, head);
-		line_number++;
-	}
-
-	free(buffer);
+	find_opcode(opcode, value, line_number, format,head);
 	return (format);
 }
-/**
- * trim_whitespace - remove whitespaces
- * @str: array if char
- * Return:format
-*/
-char *trim_whitespace(char *str)
-{
-	char *end;
 
-	
-	if (*str == '\0')
-		return str;
-
-	end = str + strlen(str) - 1;
-	while(end > str && isspace((unsigned char)*end)) end--;
-
-	*(end+1) = 0;
-
-	return str;
-}
-
-/**
- * parse_line - split the linr 
- * @buffer: array if char
- * @line_number: the number of line
- * @format:the mode atack or queue
- * @head: pointer of pointer to head
- * Return:format
-*/
-
-int parse_line(char *buffer,unsigned int line_number,int format, stack_t **head)
-{
-		char *opcode, *value_number;
-		char *seprator= " \n\t\r";
-		
-		value_number = "0";
-		while(isspace((unsigned char)*buffer)) buffer++;
-
-   
-		if (*buffer == '\0' || buffer[0]== '#')
-		{
-			opcode = NULL;
-		}
-
-	
-		else
-		{
-			opcode = strtok(buffer, seprator);
-	
-			value_number = strtok(NULL, seprator);
-		}
-		
-		
-		find_opcode(opcode,value_number,line_number,format, head);
-		return (format);
-
-}
-/**
  * find_opcode - perform the opcode
  * @opcode: the code
  * @value_number: the value to add in stack
