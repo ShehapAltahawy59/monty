@@ -74,7 +74,7 @@ int parse_line(char *buffer, unsigned int line_number, int format,  stack_t **he
 	find_opcode(opcode, value, line_number, format,head);
 	return (format);
 }
-
+/**
  * find_opcode - perform the opcode
  * @opcode: the code
  * @value_number: the value to add in stack
