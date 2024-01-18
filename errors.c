@@ -114,4 +114,3 @@ void string_err(int error_code, ...)
 	free_nodes();
 	exit(EXIT_FAILURE);
 }
-
