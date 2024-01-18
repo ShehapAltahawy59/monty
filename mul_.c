@@ -5,7 +5,7 @@
  * @new_node: the line which is excuted
  * Return:void
 */
-void mul_(stack_t **new_node,unsigned int line__number)
+void mul_(stack_t **new_node, unsigned int line__number)
 {
 	int result;
 
