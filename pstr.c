@@ -2,7 +2,7 @@
 /**
  * pstr - convert elemnt to string
  * @new_node: pointer of pointer to head of stack
- * @line_number: the line which is excuted
+ * @none: the line which is excuted
  * Return:void
 */
 void pstr(stack_t **new_node, unsigned int none)

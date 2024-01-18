@@ -2,7 +2,7 @@
 /**
  * pint - print the head of stack
  * @new_node: pointer of pointer to head of stack
- * @line_number: the line which is excuted
+ * @line__number: the line which is excuted
  * Return:void
 */
 void pint(stack_t **new_node,unsigned int line__number)

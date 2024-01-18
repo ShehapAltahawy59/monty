@@ -2,6 +2,7 @@
 /**
  * mod_ - mod the top two element in stack
  * @new_node: pointer of pointer to head of stack
+ * @line__number: the line which is excuted
  * Return:void
 */
 void mod_(stack_t **new_node, unsigned int line__number)

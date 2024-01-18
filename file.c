@@ -6,7 +6,7 @@
  * Return:void
 */
 
-void open_file(char *filename ,stack_t *head)
+void open_file(char *filename, stack_t *head)
 {
 	
 	FILE *fn = fopen(filename,"r");
