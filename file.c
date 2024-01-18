@@ -28,7 +28,7 @@ void open_file(char *filename,stack_t **head )
 */
 void read_file(FILE *fd,stack_t **head)
 {
-	int line_number, format = 0;
+	unsigned int line_number, format = 0;
 	char *buffer = NULL;
 	size_t len = 0;
 
@@ -50,7 +50,7 @@ void read_file(FILE *fd,stack_t **head)
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int parse_line(char *buffer, int line_number, int format,  stack_t **head)
+int parse_line(char *buffer, unsigned int line_number, int format,  stack_t **head)
 {
 	char *opcode, *value;
 	const char *delim = "\n\t\r ";
