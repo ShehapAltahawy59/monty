@@ -24,4 +24,3 @@ void div_(stack_t **new_node, unsigned int line__number)
 	free((*new_node)->prev);
 	(*new_node)->prev = NULL;
 }
-
