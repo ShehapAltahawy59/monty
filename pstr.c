@@ -7,18 +7,14 @@
 */
 void pstr(stack_t **new_node, unsigned int none)
 {
-    
-    int ascii;
+	int ascii;
 	stack_t *pointer;
-	
 	(void)none;
-
 	if (new_node == NULL || *new_node == NULL)
 	{
 		printf("\n");
 		return;
 	}
-
 	pointer = *new_node;
 	while (pointer != NULL)
 	{
@@ -30,4 +26,3 @@ void pstr(stack_t **new_node, unsigned int none)
 	}
 	printf("\n");
 }
-	

@@ -5,7 +5,7 @@
  * @line__number: the line which is excuted
  * Return:void
 */
-void pop(stack_t **new_node,unsigned int line__number)
+void pop(stack_t **new_node, unsigned int line__number)
 {
 	stack_t *pointer;
 
