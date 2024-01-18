@@ -58,6 +58,7 @@ int parse_line(char *buffer, unsigned int line_number, int format,  stack_t **he
 	if (buffer == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free(head);
 		exit(EXIT_FAILURE);
 	}
 	opcode = strtok(buffer, delim);
