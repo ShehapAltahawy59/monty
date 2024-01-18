@@ -53,7 +53,7 @@ void read_file(FILE *fd,stack_t **head)
 int parse_line(char *buffer, unsigned int line_number, int format,  stack_t **head)
 {
 	char *opcode, *value;
-	const char *delim = "\n\t\r ";
+	const char *delim = "\n ";
 
 	if (buffer == NULL)
 	{
