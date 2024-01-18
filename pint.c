@@ -13,4 +13,3 @@ void pint(stack_t **new_node, unsigned int line__number)
 	}
 	printf("%d\n", (*new_node)->n);
 }
-
