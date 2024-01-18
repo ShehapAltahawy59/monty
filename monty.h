@@ -40,6 +40,7 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *head;
+typedef void (*op_func)(stack_t **, unsigned int);
 void open_file(char *filename);
 void read_file(FILE *fd);
 int parse_line(char *buffer,unsigned int line_number,int format);
