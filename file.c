@@ -27,6 +27,7 @@ void read_file(FILE *fd)
 {
 	int line_number, format = 0;
 	char *buffer = NULL;
+	s
 	size_t len = 0;
 	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
 	{
@@ -51,6 +52,7 @@ int parse_line(char *buffer, unsigned int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
+
 	if (buffer == NULL)
 	{
 		err(4);
@@ -75,9 +77,9 @@ int parse_line(char *buffer, unsigned int line_number, int format)
  * @format:the mode atack or queue
  * Return:void
 */
-void find_opcode(char *opcode,char *value_number,unsigned int line__number,int format)
+void find_opcode(char *opcode, char *value_number, unsigned int line__number, int format)
 {
-	instruction_t func_list[]= {
+	instruction_t func_list[] = {
 		{"push", add_to_stack},
 		{"pall", print_stack},
 		{"pint", pint},
@@ -95,7 +97,7 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 		{"rotr", rotr},
 		{NULL, NULL}
 	};
-	int i,flag;
+	int i, flag;
 
 	if (opcode[0] == '#')
 		return;
