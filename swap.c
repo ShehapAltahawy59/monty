@@ -11,7 +11,13 @@ void swap(stack_t **head,unsigned int line__number)
 	int tmp;
 	pointer = *head;
 	
-	if(pointer == NULL || pointer->prev == NULL)
+	if(pointer == NULL)
+	{
+		fprintf(stderr,"L%d: can't swap, stack too short\n",line__number);
+		free_nodes(head);
+		exit(EXIT_FAILURE);
+	}
+	else if(pointer->prev == NULL)
 	{
 		fprintf(stderr,"L%d: can't swap, stack too short\n",line__number);
 		free_nodes(head);
