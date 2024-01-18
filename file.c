@@ -8,7 +8,6 @@
 
 void open_file(char *filename, stack_t *head)
 {
-	
 	FILE *fn = fopen(filename,"r");
 	(void)head;
 	if (filename == NULL || fn == NULL)
@@ -17,7 +16,6 @@ void open_file(char *filename, stack_t *head)
 	}	
 	read_file(fn);
 	fclose(fn);
-
 }
 
 /**
@@ -30,7 +28,6 @@ void read_file(FILE *fd)
 	int line_number, format = 0;
 	char *buffer = NULL;
 	size_t len = 0;
-
 	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
 	{
 		format = parse_line(buffer, line_number, format);
@@ -54,22 +51,18 @@ int parse_line(char *buffer, unsigned int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
-
 	if (buffer == NULL)
 	{
 		err(4);
 	}
 	opcode = strtok(buffer, delim);
-	
 	if (opcode == NULL )
 		return (format);
 	value = strtok(NULL, delim);
-
 	if (strcmp(opcode, "stack") == 0)
 		return (0);
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
-
 	find_opcode(opcode, value, line_number, format);
 	return (format);
 }
@@ -119,8 +112,6 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 	{
 		err(3, line__number, opcode);
 	}
-		
-
 }
 
 /**
@@ -154,7 +145,6 @@ void call_fun(instruction_t func, char *opcode, char *value_number, unsigned int
 		{
 			if (isdigit(value_number[i]) == 0)
 				{
-						
 					err(5, line__number);
 				}
 		}
@@ -167,4 +157,3 @@ void call_fun(instruction_t func, char *opcode, char *value_number, unsigned int
 	else
 		func.f(&head, line__number);
 }
-
