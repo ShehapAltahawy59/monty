@@ -7,17 +7,15 @@
 */
 void rotl(stack_t **new_node, unsigned int none)
 {
-    
-    stack_t *pointer;
-    
-    (void)none;
+	
+	stack_t *pointer;
+	
+	(void)none;
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
 		return;
-
 	pointer = *new_node;
 	while (pointer->next != NULL)
 		pointer = pointer->next;
-
 	pointer->next = *new_node;
 	(*new_node)->prev = pointer;
 	*new_node = (*new_node)->next;
