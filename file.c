@@ -12,7 +12,7 @@ void open_file(char *filename )
 	FILE *fn = fopen(filename,"r");
 	if (filename == NULL || fn == NULL)
 	{
-		err(2, file_name);
+		err(2, filename);
 	}	
 	read_file(fn);
 	fclose(fn);

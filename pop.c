@@ -11,7 +11,7 @@ void pop(stack_t **new_node,unsigned int line__number)
 
 	if (new_node == NULL || *new_node == NULL)
 	{
-		more_err(7, line_number);
+		more_err(7, line__number);
 	}
 	pointer = *new_node;
 	*new_node = pointer->next;

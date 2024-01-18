@@ -11,7 +11,7 @@ void swap(stack_t **new_node,unsigned int line__number)
 
 	if (new_node == NULL || *new_node == NULL || (*new_node)->next == NULL)
 	{
-		more_err(8, line_number, "swap");
+		more_err(8, line__number, "swap");
 	}
 	pointer = (*new_node)->next;
 	(*new_node)->next = pointer->next;

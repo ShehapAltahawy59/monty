@@ -17,7 +17,7 @@ void div_(stack_t **new_node,unsigned int line__number)
 
 	if ((*new_node)->n == 0)
 	{
-	 more_err(9, line_number);
+	 more_err(9, line__number);
 	}
 	(*new_node) = (*new_node)->next;
 	result = (*new_node)->n / (*new_node)->prev->n;
