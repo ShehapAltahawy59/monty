@@ -163,6 +163,8 @@ void call_fun(instruction_t func, char *opcode, char *value_number, unsigned int
 		node = create_node(atoi(value_number) * flag);
 		if (format == 0)
 			func.f(&node, line__number);
+		if (format == 1)
+			add_to_queue(&node, ln);
 	}
 	else
 		func.f(&head, line__number);
