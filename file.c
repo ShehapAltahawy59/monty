@@ -164,6 +164,8 @@ void find_opcode(char *opcode,char *value_number,unsigned int line__number,int f
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line__number, opcode);
+	free_nodes(head);
+	exit(EXIT_FAILURE);
 	
 
 }
